@@ -9,7 +9,7 @@ function App() {
                         "game game"
                         "settings settings"`}
       >
-        <GridItem area="header" bg="coral">
+        <GridItem area="header">
           <Header />
         </GridItem>
         <GridItem area="game" bg="gold">
