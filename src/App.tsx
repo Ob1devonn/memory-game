@@ -1,4 +1,5 @@
 import { Grid, GridItem } from "@chakra-ui/react";
+import Header from "./components/Header";
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
                         "settings settings"`}
       >
         <GridItem area="header" bg="coral">
-          Header
+          <Header />
         </GridItem>
         <GridItem area="game" bg="gold">
           game
