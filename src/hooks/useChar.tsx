@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import apiClient from "../services/api-client";
 import { CanceledError } from "axios";
 
-interface Characters {
+export interface Character {
   id: number;
   name: string;
+  image: string;
 }
 
 const useChar = () => {
-  const [characters, setCharacters] = useState<Characters[]>([]);
+  const [characters, setCharacters] = useState<Character[]>([]);
   const [error, setError] = useState("");
 
   useEffect(() => {
