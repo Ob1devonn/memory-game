@@ -1,23 +1,8 @@
-import { useEffect, useState } from "react";
-import apiClient from "../services/api-client";
 import { Text } from "@chakra-ui/react";
-
-interface Characters {
-  id: number;
-  name: string;
-}
+import useChar from "../hooks/useChar";
 
 function GameGrid() {
-  const [characters, setCharacters] = useState<Characters[]>([]);
-  const [error, setError] = useState("");
-
-  useEffect(() => {
-    apiClient
-      .get("/characters")
-      .then((res) => setCharacters(res.data))
-      .catch((err) => setError(err.message));
-  });
-
+  const { characters, error } = useChar();
   return (
     <>
       {error && <Text>{error}</Text>}
