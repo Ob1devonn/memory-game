@@ -17,7 +17,7 @@ const useChar = () => {
 
     apiClient
       .get("/characters", { signal: controller.signal })
-      .then((res) => setCharacters(res.data))
+      .then((res) => setCharacters(res.data.slice(0, 25)))
       .catch((err) => {
         if (err instanceof CanceledError) return;
         setError(err.message);
