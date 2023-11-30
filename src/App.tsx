@@ -8,6 +8,7 @@ function App() {
         templateAreas={`"header header"
                         "game game"
                         "settings settings"`}
+        className="background"
       >
         <GridItem area="header">
           <Header />
