@@ -4,9 +4,9 @@ function GameCardSkeleton() {
   return (
     //verify this is the same aspect as GameCard
     <Card>
-      <Skeleton />
+      <Skeleton h="20rem" />
       <CardBody>
-        <SkeletonText />
+        <SkeletonText noOfLines={1} spacing="4" skeletonHeight="1.2rem" />
       </CardBody>
     </Card>
   );

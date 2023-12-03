@@ -8,9 +8,9 @@ interface Props {
 function GameCard({ character }: Props) {
   return (
     <Card>
-      <Image h="40rem" src={character.image} />
+      <Image h="20rem" src={character.image} />
       <CardBody>
-        <Heading fontSize="2xl">{character.name}</Heading>
+        <Heading fontSize="md">{character.name}</Heading>
       </CardBody>
     </Card>
   );

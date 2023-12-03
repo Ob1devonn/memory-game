@@ -17,9 +17,7 @@ function App() {
         <GridItem area="game">
           <GameGrid />
         </GridItem>
-        <GridItem area="settings" bg="dodgerblue">
-          settings
-        </GridItem>
+        <GridItem area="settings">settings</GridItem>
       </Grid>
     </div>
   );
