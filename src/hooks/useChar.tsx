@@ -8,6 +8,17 @@ export interface Character {
   image: string;
 }
 
+function getRandomIndices(array: [], count: number) {
+  const shuffledArray = array.slice();
+
+  for (let i = shuffledArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+  }
+
+  return shuffledArray.slice(0, count);
+}
+
 const useChar = () => {
   const [characters, setCharacters] = useState<Character[]>([]);
   const [error, setError] = useState("");
@@ -20,7 +31,8 @@ const useChar = () => {
     apiClient
       .get("/characters", { signal: controller.signal })
       .then((res) => {
-        setCharacters(res.data.slice(0, 25));
+        //select 4 random characters from api
+        setCharacters(getRandomIndices(res.data.slice(0, 25), 4));
         setLoading(false);
       })
       .catch((err) => {
